@@ -46,3 +46,20 @@ ggplot(data = tdata) + geom_col(mapping = aes(x = conds, y = values, fill = type
 ## change y label, add x label
 ## Move / fix legend
 ## Black borders?
+
+
+
+
+# Where to put the data = ?
+
+ggplot(data = storms) + geom_point(mapping = aes(x = long, y = lat, color = wind))
+
+ggplot(data = storms, mapping = aes(x = long, y = lat, color = wind)) + geom_point()
+
+ggplot() + geom_point(data = storms, mapping = aes(x = long, y = lat, color = wind)) + 
+  geom_smooth(data = filter(storms, name == "Sandy"), mapping = aes(x = long, y = lat), color = "red") +
+  geom_smooth(data = filter(storms, name == "Katrina"), mapping = aes(x = long, y = lat), color = "black")
+
+ggplot(data = storms, mapping = aes(x = long, y = lat)) + geom_point(aes(color = wind)) + 
+  geom_smooth(data = filter(storms, name == "Andrew"), color = "red") +
+  geom_smooth(data = filter(storms, name == "Wilma"), color = "black")
