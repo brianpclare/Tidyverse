@@ -1,5 +1,3 @@
-library(dplyr)
-
 # Let's look at our datasets
 
 data()

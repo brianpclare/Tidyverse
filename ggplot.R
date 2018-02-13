@@ -63,3 +63,9 @@ ggplot() + geom_point(data = storms, mapping = aes(x = long, y = lat, color = wi
 ggplot(data = storms, mapping = aes(x = long, y = lat)) + geom_point(aes(color = wind)) + 
   geom_smooth(data = filter(storms, name == "Andrew"), color = "red") +
   geom_smooth(data = filter(storms, name == "Wilma"), color = "black")
+
+ggplot(data = storms) + geom_point(mapping = aes(x = lat, y = ts_diameter))
+
+ggplot(data = storms) + geom_point(mapping = aes(x = long, y = status))
+
+ggplot(data = storms) + geom_jitter(mapping = aes(x = long, y = status))
