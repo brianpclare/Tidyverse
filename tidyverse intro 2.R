@@ -21,7 +21,7 @@ suppressMessages(
 
 # From Sean Lahman's Baseball Database
 
-baseball <- "C:\\Users\\bpc29\\Documents\\baseballdatabank-2017.1\\baseballdatabank-2017.1\\core\\Teams.csv"
+baseball <- "Teams.csv"
 
 teams <- read_csv(baseball)
 
