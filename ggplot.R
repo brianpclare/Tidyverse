@@ -40,13 +40,16 @@ ggplot(data = tdata) + geom_col(mapping = aes(x = conds, y = values, fill = type
 
 
 
+ggplot(data = tdata) + geom_col(mapping = aes(x = conds, y = values, fill = types), position = "dodge")
+
 # To-do list
 ## Fix colors
 ## Add error bars
-## change y label, add x label
+## change y label, add x label, y-axis numbering
 ## Move / fix legend
 ## Black borders?
 
+?theme
 
 
 
@@ -69,3 +72,5 @@ ggplot(data = storms) + geom_point(mapping = aes(x = lat, y = ts_diameter))
 ggplot(data = storms) + geom_point(mapping = aes(x = long, y = status))
 
 ggplot(data = storms) + geom_jitter(mapping = aes(x = long, y = status))
+
+ggplot(data = storms) + geom_point(mapping = aes(x = long, y = lat, color = wind)) + facet_wrap(~category)
