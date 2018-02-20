@@ -38,7 +38,9 @@ ggplot(data = tdata) + geom_col(mapping = aes(x = conds, y = values, fill = type
 
 # What the heck is going on with the y-axis
 
+class(tdata$values)
 
+tdata$values <- as.numeric(tdata$values)
 
 ggplot(data = tdata) + geom_col(mapping = aes(x = conds, y = values, fill = types), position = "dodge")
 
@@ -71,6 +73,6 @@ ggplot(data = storms) + geom_point(mapping = aes(x = lat, y = ts_diameter))
 
 ggplot(data = storms) + geom_point(mapping = aes(x = long, y = status))
 
-ggplot(data = storms) + geom_jitter(mapping = aes(x = long, y = status))
+ggplot(data = storms) + geom_jitter(mapping = aes(x = long, y = status), height = 0.2, width = 0.2)
 
 ggplot(data = storms) + geom_point(mapping = aes(x = long, y = lat, color = wind)) + facet_wrap(~category)
