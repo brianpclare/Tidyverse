@@ -62,6 +62,12 @@ for (i in 1:1e6) {
   a <- a + 1
 }
 
+# The operation '+' is defined in several ways depending on what object types are being used
+# + on integers, numbers, booleans (True / False) etc
+# So for every step of this loop, R has to decide which '+' you want it to use
+
+
+
 # Small note: I'm trying not to reuse variable names, 
 # so you can go through and re-run any part of this code and it will still work
 
