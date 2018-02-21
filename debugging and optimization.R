@@ -39,7 +39,7 @@ try(1 + 2)
 1 + 2
 
 
-# Optimization and Profiling
+# Optimization
 
 # http://adv-r.had.co.nz/Performance.html
 
