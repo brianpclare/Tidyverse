@@ -19,12 +19,16 @@ mtcars %>%
   sapply(function(x) x$r.squared)
 
 # With purrr
+# note that the . can mean "all columns" in a linear model, or similarly "the data we've been using"
+# split() returns a list of dataframes
 
 mtcars %>%
   split(.$cyl) %>%
   map(~ lm(mpg ~ wt, data = .)) %>%
   map(summary) %>%
   map_dbl("r.squared")
+
+
 
 # repurrrsive gives us some nice list examples, such as got_chars
 # If you're a game of thrones fan, please note this list of characters and traits
