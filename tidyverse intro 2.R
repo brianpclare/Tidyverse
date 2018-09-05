@@ -17,7 +17,7 @@ base <- read.csv(path)
 library(microbenchmark)
 
 x <- runif(100)
-microbenchmark(sqrt(x),x ^ 0.5)
+microbenchmark(sqrt(x), x ^ 0.5)
 
 suppressMessages(
   microbenchmark(read.csv(path), read_csv(path), read_delim(path, delim = ","))
@@ -28,6 +28,13 @@ ct <- "ciiiinnciiiccc"
 suppressMessages(
   microbenchmark( read_csv(path), read_csv(path, col_types = ct))
 )
+
+
+## col_types "double" can be better than "numeric"
+# specifically in the case of a csv with scientific notation values
+# reading as numeric will read "2.45e6" as "2.45"
+
+
 
 # From Sean Lahman's Baseball Database
 

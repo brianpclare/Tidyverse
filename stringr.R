@@ -1,7 +1,7 @@
 library(tidyverse)
 library(readxl)
 
-#writing to xlsx, especially to different sheets
+# writing to xlsx, especially to different sheets
 library(openxlsx)
 
 # the package "xlsx" is also usable but has a java dependency that can be annoying for installation
@@ -37,14 +37,14 @@ str_count(str2, " a ")
 str3 <- "Tom said we'll have time to read a tame tome at the bottom of the well"
 
 str_count(str3, "tom")
-str_count(str3, "t.m")   # . is a wildcard
+str_count(str3, "t.m") # . is a wildcard
 
-# One advantage of stringr instead of base R string operations is 
+# One advantage of stringr instead of base R string operations is
 # that stringr functions work with pipes
 
 str3 %>% str_to_lower() %>% str_count("t.m")
 
-str3 %>% str_to_lower() %>% str_count("t[oi]m")   # [] means any of the characters inside
+str3 %>% str_to_lower() %>% str_count("t[oi]m") # [] means any of the characters inside
 
 # [xyz] will match any one of those characters
 # We can use that to match cases as well if we don't want the whole string changed to lower
@@ -53,10 +53,10 @@ str3 %>% str_count("[Tt]om")
 
 str4 <- "Food, fooooood. FOOOOOOOOOOOOD!"
 
-str4 %>% str_to_lower() %>% str_count("fo{2,}d")
+str4 %>% str_to_lower() %>% str_count("fo{2,}d") # 2 or more
 
 
-str4 %>% str_to_lower() %>% str_extract("[[:punct:]]")
+str4 %>% str_to_lower() %>% str_extract("[[:punct:]]") # only takes the first match
 str4 %>% str_to_lower() %>% str_extract_all("[[:punct:]]")
 
 str4 %>% str_count(".")
