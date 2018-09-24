@@ -4,7 +4,7 @@ data()
 
 # Let's get some more datasets
 
-library(tidyverse)
+library(tidyverse) # this loads dplyr, ggplot, tidyr, and others. never type library(dplyr)
 
 data()
 
