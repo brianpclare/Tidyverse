@@ -40,3 +40,5 @@ major_storms <- fast_names_unique_3 %>% group_by(year) %>% summarize(Number = n(
 ex <- fast_names_unique_3 %>% select(year)
 
 ex2 <- storms %>% group_by(year, category)
+
+fastest_storms <- storms %>% top_n(20, wind) %>% arrange(desc(wind))
