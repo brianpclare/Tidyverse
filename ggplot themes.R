@@ -43,3 +43,5 @@ ggplot(data = iris) + geom_point(aes(x = Sepal.Length, y = Petal.Length, color =
   scale_y_discrete(name = "Petal Length", limits = seq(0, 7, 1)) + 
   scale_color_manual(values = cbbPalette)
   
+# for more on colors, look here
+# http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/
