@@ -29,7 +29,7 @@ fast_names_unique_2 <- unique(select(filter(storms, wind > 120), name, year))
 # Ctrl-Shift-m: %>% 
 
 fast_names_unique_3 <- storms %>% filter(wind > 120) %>%  select(name, year) %>%
-                                  unique()
+  unique()
 
 # Note: the () are not necessary for unique but it's nice to have them for clarity
 
@@ -39,6 +39,6 @@ major_storms <- fast_names_unique_3 %>% group_by(year) %>% summarize(Number = n(
 
 ex <- fast_names_unique_3 %>% select(year)
 
-ex2 <- storms %>% group_by(year, category)
+ex2 <- storms %>% group_by(year, category) %>% summarize(whatever_you_want = n())
 
 fastest_storms <- storms %>% top_n(20, wind) %>% arrange(desc(wind))

@@ -9,7 +9,7 @@ library(openxlsx)
 
 # So, about strings
 
-library(stringr)
+# library(stringr)
 
 # Stringr cheatsheet is available on RStudio's website, or in this github repo
 
@@ -97,6 +97,6 @@ end_Ws <- storms %>% filter(str_detect(name, "w$")) %>% select(name, year) %>% u
 
 # Regular Expressions can get pretty messy
 
-rnum <- "XCVIII"
+rnum <- "XCVIIII"
 
 rnum %>% str_detect("^M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$")
